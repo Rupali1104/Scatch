@@ -1,4 +1,4 @@
-const mongoose = require("mongooose");
+const mongoose = require("mongoose");
 
 const productSchema = mongoose.Schema({
     image: Buffer,
