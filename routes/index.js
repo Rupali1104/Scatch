@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const isloggedin = require("../middlewares/isLoggedIn");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 const productModel = require("../models/product-model");
 const userModel = require("../models/user-model");
 
@@ -9,14 +9,14 @@ router.get("/", (req, res) => {
     res.render("index.ejs", { error, logedin: false });  
 });
 
-router.get("/shop", isLogedIn, async function (req, res, next) {
+router.get("/shop", isLoggedIn, async function (req, res, next) {
     let user = await userModel.findOne({ email: req.user.email });
     let products = await productModel.find();
     let success = req.flash("success");
     res.render("shop.ejs", { products, success, currentPage: "shop", user });
   });
   
-  router.get("/addtocart/:productid", isLogedIn, async (req, res) => {
+  router.get("/addtocart/:productid", isLoggedIn, async (req, res) => {
     let user = await userModel.findOne({ email: req.user.email });
     user.cart.push(req.params.productid);
     await user.save();
@@ -24,7 +24,7 @@ router.get("/shop", isLogedIn, async function (req, res, next) {
     res.redirect("/shop");
   });
   
-  router.get("/discart/:productid", isLogedIn, async (req, res) => {
+  router.get("/discart/:productid", isLoggedIn, async (req, res) => {
     try {
       let user = await userModel.findOne({ email: req.user.email });
 
@@ -49,7 +49,7 @@ router.get("/shop", isLogedIn, async function (req, res, next) {
     }
   });
 
-  router.get("/cart", isLogedIn, async function (req, res, next) {
+  router.get("/cart", isLoggedIn, async function (req, res, next) {
     let user = await userModel
       .findOne({ email: req.user.email })
       .populate("cart");

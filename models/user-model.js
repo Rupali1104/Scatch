@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let userSchma = mongoose.Schema({
+let userSchema = mongoose.Schema({
     fullname: {
       type: String,
       minLength: 3,
