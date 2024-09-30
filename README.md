@@ -7,9 +7,7 @@ Scatch is a fully functional e-commerce application designed to provide a seamle
 - **User Authentication**: Secure login and registration system.
 - **Product Management**: Add, edit, and remove products from the catalog.
 - **Shopping Cart**: Users can add products to their cart, view, and manage their cart items.
-- **Order Processing**: Place orders and track them.
 - **Admin Panel**: Admins can manage products, orders, and users from a dedicated panel.
-- **Responsive Design**: Optimized for all screen sizes.
 - **Database Integration**: Persistent storage using MongoDB.
 
 ## Technologies Used
@@ -22,7 +20,6 @@ Scatch is a fully functional e-commerce application designed to provide a seamle
 - **MongoDB**: NoSQL database for storing user, product, and order data.
 - **Mongoose**: ODM for MongoDB, simplifying data modeling.
 - **Multer**: For handling file uploads (e.g., product images).
-- **Passport.js**: For user authentication.
 - **Bcrypt**: For hashing passwords securely.
 - **Express-session**: For managing user sessions.
 - **Dotenv**: For environment variable management.
